@@ -127,7 +127,48 @@ p {
     display: none;
 }
 
+.logoHeader {
+    position: absolute;
+    height: 70px;
+    width: 100vw;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 1);
+
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between; 
+
+}
+
+.project-logo {
+    height: 100%;
+    display: flex;
+    margin: 0;
+    /* width: fit-content; */
+}
+
+.second-logo {
+    height: 100%;
+}
+
+.logo {
+    height: 100%;
+    
+}
+
+.project-logo img,
+.second-logo img {
+    margin: 0;
+    height: 100%;
+    width: auto;
+}
+
 .navbar {
+    /* novo */
+    margin-top: 35px;
+    /* novo */
     padding: 4vh 3px 3px 3px;
     position: fixed;
     width: 100vw;
@@ -249,7 +290,10 @@ nav a::after {
     position: fixed;
     height: 20px;
     width: 20px;
-    top: 6vh;
+    /* novo */
+    /* top: 6vh; */
+    top: 11vh;
+    /* novo */
     right: 4vw;
     border: none;
 	padding: 0;
@@ -373,7 +417,8 @@ nav a::after {
 #div2-sec1 {
     position: absolute;
     right: 4%;
-    top: 90px;
+    /* top: 90px; */
+    top: 30%;
     bottom: 170px;
     width: 40%;
     margin: 0;
@@ -381,12 +426,6 @@ nav a::after {
     padding-bottom: 5px;
     overflow-y: scroll; 
 
-    /* scrollbar postavke za Edge IE i Firefox
-    -ms-overflow-style: initial;  /* IE and Edge 
-    scrollbar-width: initial; 
-    scrollbar-color: #9dc43f rgba(0,0,0,0);
-    scrollbar-width: thin; 
-    */
 }
 
 #div2-sec1,
@@ -441,25 +480,20 @@ nav a::after {
     overflow-y: auto;
     background-color: rgba(255, 255, 255, 0.7);
     
-    display: grid;
+    /* display: grid; */
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: 50% 50%;
     text-align: center;
     padding: 0;
+
+    display: none;
 }
 
-#logo1 {
-    grid-column: 1 / 2;
-    padding: 10px;
-}
 
-#logo2 {
-    grid-column: 2 / 3;
-    padding: 10px;
-}
 
 #logo3 {
-    grid-column: 3 / 4;
+    grid-row: 1;
+    grid-column: 1 / -1;
     padding: 10px;
 }
 
@@ -489,7 +523,7 @@ nav a::after {
 #div2-sec2 {
     position: absolute;
     left: 4%;
-    top: 20%;
+    top: 30%;
     width: 25%;
     margin: 0;
     height: fit-content;
@@ -510,12 +544,21 @@ nav a::after {
     overflow-y: scroll;
 }
 
+#teamBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 50%;
+    background-color: #314a9a;
+}
+
 #teamPhoto {
     position: absolute;
     height: 100%;
     right: 0px;
     bottom: 0px;
-    width: 52%;
+    width: 50%;
     margin: 0;
     padding: 0;
     border: 0;
@@ -532,23 +575,52 @@ nav a::after {
 #team {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(6,5.5em);
+    grid-template-rows: repeat(6,4.0em);
     /* gap: 10px; */
-    gap: 10px;
+    gap: 5px;
     word-wrap: normal;
-    width: 45%;
-    height: 75%;
+    width: 47%;
+    height: 60%;
     position: absolute;
-    top: 12%;
-    left: 40px;
+    top: 15%;
+    left: 45px;
     overflow-y: auto;
 }
 
-/* #teamDiv {
-    min-height: fit-content;
-    height: 50px;
+
+#teamText {
+    position: absolute;
+    top: 75%;
+    /* bottom: 40px; */
+    left: 45px;
+    width: 45%;
+    display: flex;
+    margin: 0;
+    
+}
+
+.digiText {
+    width: 70%;
+    
+}
+
+.digiLogo {
+    width: 30%;
+    position: relative;
+}
+
+.digiLogo img {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: white;
+    width: 100%;
+    height: auto;
     padding: 5px;
-}  */
+}
+
 
 #back-anim {
     width: 35px;
@@ -585,18 +657,26 @@ nav a::after {
     position: absolute; 
     top: 0; right: 0; 
     bottom: 0; left: 0;
-    margin: auto; 
+    margin: auto;
   }
   .videoTrailer iframe{
     position: absolute;
     top:0;
     left: 0;
+    margin-top: 50px;
     width: 100%;
     height: 100%;
   }
 
 
 /* tablet and mobile responsive */
+
+@media screen and (min-width: 821px) and (max-width: 1070px) {
+    .second-logo {
+        display: none;
+    }
+    
+}
 
 @media screen and (min-width: 600px) and (max-width: 821px) {
 
@@ -641,10 +721,72 @@ nav a::after {
         width: 80vw;
         height: 45vw;
     }
+
+    #div3-sec1 {
+        display: grid;
+    }
+
+    .second-logo {
+        display: none;
+    }
 }
     
 
 @media screen and (max-width:600px) {
+
+    .logoHeader {
+        display: none;
+    }
+
+    #teamBackground {
+        display: none;
+    }
+
+    #teamText {
+        position: relative;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .digiText {
+        width: 100%;
+        height: fit-content;
+        padding: 20px;
+        
+    }
+    
+    .digiLogo {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding: 20px 60px 20px 60px;
+        margin-bottom: 220px;
+    }
+
+    .digiLogo img {
+        margin: 0;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+    }
+
+    #mob-emoundergrounds {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        height: fit-content;
+        width: 100%;
+    }
+
+    .mobile-logo img {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
 
     #lang-button {
         top: 25px;
@@ -665,10 +807,6 @@ nav a::after {
         overflow-y: scroll;
     }
 
-    /* #welcomeScreen {
-        z-index: -50;
-        display: none;
-    } */
 
     #welcomeScreen #welcomeWrapper {
         width: 100%;
@@ -684,8 +822,7 @@ nav a::after {
         display: flex;
         width: 100vw;
         height: fit-content;
-        /* min-height: 100vh; */
-        /* scroll-snap-align: start; */
+        
         
     }
 
@@ -703,9 +840,7 @@ nav a::after {
         height: 40%;
         margin-top: 5px;
         margin-bottom: 80px;
-        /* height: 100px; */
-        /* margin-top: 80px; */
-        /* padding: 20px; */
+        
     }
 
     #forSquare {
@@ -747,6 +882,7 @@ nav a::after {
     }
 
     #div3-sec1 {
+        display: grid;
         position: relative;
         width: 96%;
         left: auto;
@@ -816,7 +952,7 @@ nav a::after {
         grid-template-rows: auto;
         width: 100%;
         padding: 20px;
-        margin-bottom: 190px;
+        margin-bottom: 0;
         margin-top: 30px;
         gap: 5px;
         top: auto;

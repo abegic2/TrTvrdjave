@@ -272,8 +272,6 @@ nav a::after {
 
 #menu-button {
     background: transparent;
-    /* background-image: url(img/icon-menu-192.png);
-    background-size: cover; */
     position: absolute;
     border: none;
     height: 30px;
@@ -290,10 +288,7 @@ nav a::after {
     position: fixed;
     height: 20px;
     width: 20px;
-    /* novo */
-    /* top: 6vh; */
     top: 11vh;
-    /* novo */
     right: 4vw;
     border: none;
 	padding: 0;
@@ -417,9 +412,8 @@ nav a::after {
 #div2-sec1 {
     position: absolute;
     right: 4%;
-    /* top: 90px; */
     top: 30%;
-    bottom: 170px;
+    bottom: 80px;
     width: 40%;
     margin: 0;
     padding-right: 5px;
@@ -431,7 +425,8 @@ nav a::after {
 #div2-sec1,
 #div2-sec2,
 #div2-sec3,
-#team {
+#team,
+.digiText {
     /* scrollbar postavke za Edge IE i Firefox */
     -ms-overflow-style: initial;  /* IE and Edge */
     scrollbar-width: initial; 
@@ -444,7 +439,8 @@ nav a::after {
 #div2-sec1::-webkit-scrollbar,
 #div2-sec2::-webkit-scrollbar,
 #div2-sec3::-webkit-scrollbar,
-#team::-webkit-scrollbar {
+#team::-webkit-scrollbar,
+.digiText::-webkit-scrollbar {
     display: block;
     height: 8px;
     width: 6px;
@@ -455,7 +451,8 @@ nav a::after {
 #div2-sec1::-webkit-scrollbar-thumb,
 #div2-sec2::-webkit-scrollbar-thumb,
 #div2-sec3::-webkit-scrollbar-thumb,
-#team::-webkit-scrollbar-thumb  {
+#team::-webkit-scrollbar-thumb,
+.digiText::-webkit-scrollbar-thumb  {
     -webkit-border-radius: 10px;
     border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5);
@@ -466,7 +463,8 @@ nav a::after {
 #div2-sec1::-webkit-scrollbar-thumb:window-inactive,
 #div2-sec2::-webkit-scrollbar-thumb:window-inactive,
 #div2-sec3::-webkit-scrollbar-thumb:window-inactive,
-#team::-webkit-scrollbar-thumb:window-inactive {
+#team::-webkit-scrollbar-thumb:window-inactive,
+.digiText::-webkit-scrollbar-thumb:window-inactive {
     background: auto; 
 }
 
@@ -590,22 +588,24 @@ nav a::after {
 
 #teamText {
     position: absolute;
-    top: 75%;
+    top: 73%;
     /* bottom: 40px; */
     left: 45px;
     width: 45%;
     display: flex;
     margin: 0;
+    overflow: hidden;
     
 }
 
 .digiText {
-    width: 70%;
+    width: 80%;
+    overflow-y: scroll;
     
 }
 
 .digiLogo {
-    width: 30%;
+    width: 20%;
     position: relative;
 }
 
@@ -659,7 +659,7 @@ nav a::after {
     bottom: 0; left: 0;
     margin: auto;
   }
-  .videoTrailer iframe{
+  .videoTrailer video{
     position: absolute;
     top:0;
     left: 0;
@@ -702,6 +702,8 @@ nav a::after {
     #div3-sec1 {
         width: 60%;
         padding: 10px;
+        display: grid;
+        display: none;
     }
     #div2-sec2 {
         width: 100%;
@@ -720,10 +722,6 @@ nav a::after {
     .videoTrailer{
         width: 80vw;
         height: 45vw;
-    }
-
-    #div3-sec1 {
-        display: grid;
     }
 
     .second-logo {

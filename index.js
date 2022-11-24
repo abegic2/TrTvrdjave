@@ -35,8 +35,8 @@ app.get('/trebinje_trailer', function(req, res) {
     
 });
 
-// app.all('*', function(req, res) {
-//     res.redirect("/");
-// });
+app.all('*', function(req, res) {
+    res.redirect("/");
+});
 
 app.listen(PORT);
